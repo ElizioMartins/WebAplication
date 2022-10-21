@@ -10,8 +10,8 @@ import { CursosService } from '../cursos.service';
 })
 export class CursoDetalheComponent implements OnInit {
   id!: number ;
-  inscricao!: Subscription;
   curso!: any;
+  inscricao!: Subscription;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,13 +22,14 @@ export class CursoDetalheComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.inscricao = this.route.params.subscribe((params: any) => {
+    this.inscricao = this.route.params.subscribe(
+      (params: any) => {
       this.id = params['id'];
 
       this.curso = this.cursosService.getCurso(this.id);
 
       if(this.curso == null){
-        this.router.navigate(['/naoEncontrado']);
+        this.router.navigate(['/cursos/naoEncontrado']);
       }
 
     });

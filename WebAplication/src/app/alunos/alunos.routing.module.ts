@@ -6,6 +6,7 @@ import { AlunoDetalheComponent } from './aluno-detalhe/aluno-detalhe.component';
 import { AlunoFormComponent } from './aluno-form/aluno-form.component';
 import { AlunosComponent } from './alunos.component';
 import { AlunosDetalheResolver } from './guards/alunos-detalhe.resolver';
+import { DataFormComponent } from './data-form/data-form.component';
 
 const alunosRoutes: Routes = [
   { path: '', component: AlunosComponent,
@@ -17,6 +18,9 @@ const alunosRoutes: Routes = [
   },
     { path: ':id/editar', component: AlunoFormComponent,
   canDeactivate:[AlunosDeactivateGuard]
+  },
+
+  { path: ':id/dataForm', component: DataFormComponent,
   },
 
   ] },

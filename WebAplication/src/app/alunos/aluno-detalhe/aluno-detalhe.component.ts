@@ -46,6 +46,12 @@ id!:number;
 
   }
 
+  dataForm(){
+
+    this.router.navigate(['/alunos', this.aluno.id, 'dataForm'])
+
+  }
+
   ngOnDestroy(){
     this.inscricao.unsubscribe();
   }

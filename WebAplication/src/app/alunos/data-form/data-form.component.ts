@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ValidatorService } from 'src/app/erro-form-control/validator.service';
@@ -14,12 +15,29 @@ export class DataFormComponent implements OnInit{
     email: new FormControl(''),
   });
 
-  constructor(private formBuilder: FormBuilder, private validator: ValidatorService,) {}
+  constructor(private formBuilder: FormBuilder, private validator: ValidatorService, private http: HttpClient) {}
 
   ngOnInit() {
     // this.formulario = new FormGroup({
     //   nome: new FormControl(null),
     //   email: new FormControl(null),
     // });
+  }
+
+  onSubmit(){
+
+    console.log(this.formulario.value);
+
+    this.http
+      .post('https://httpbin.org/post', JSON.stringify(this.formulario.value))
+      .subscribe(
+        (dados) => {
+          console.log(dados);
+
+          this.formulario.reset();
+        },
+        (erro: any) => alert('erro')
+      );
+
   }
 }

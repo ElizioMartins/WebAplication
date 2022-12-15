@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ValidatorService } from 'src/app/erro-form-control/validator.service';
 
 @Component({
@@ -11,8 +11,8 @@ import { ValidatorService } from 'src/app/erro-form-control/validator.service';
 export class DataFormComponent implements OnInit{
 
   formulario = new FormGroup({
-    nome: new FormControl(''),
-    email: new FormControl(''),
+    nome: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
   });
 
   constructor(private formBuilder: FormBuilder, private validator: ValidatorService, private http: HttpClient) {}
@@ -34,10 +34,14 @@ export class DataFormComponent implements OnInit{
         (dados) => {
           console.log(dados);
 
-          this.formulario.reset();
+          this.resetar();
         },
         (erro: any) => alert('erro')
       );
 
+  }
+
+  resetar(){
+    this.formulario.reset();
   }
 }

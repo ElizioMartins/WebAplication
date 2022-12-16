@@ -12,11 +12,34 @@ import { LoginComponent } from './login/login.component';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 import { CampoControlErroComponent } from './erro-form-control/campo-control-erro/campo-control-erro.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuComponent } from './menu/menu/menu.component';
+import { CardModule } from 'primeng/card';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ButtonModule } from 'primeng/button';
+import { SlideMenu, SlideMenuModule } from 'primeng/slidemenu';
+import { TabMenuModule } from 'primeng/tabmenu';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, PaginaNaoEncontradaComponent],
-  imports: [BrowserModule,  AppRoutingModule, FormsModule, HttpClientModule, ReactiveFormsModule],
-  providers: [AuthService,AuthGuard, CursosGuard],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    LoginComponent,
+    PaginaNaoEncontradaComponent,
+    MenuComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    CardModule,
+    BrowserAnimationsModule,
+    ButtonModule,
+    SlideMenuModule,
+    TabMenuModule,
+  ],
+  providers: [AuthService, AuthGuard, CursosGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

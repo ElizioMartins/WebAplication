@@ -4,17 +4,32 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-<nav *ngIf="mostrarMenu">
+<!-- <nav *ngIf="mostrarMenu">
   <div class="nav-wrapper">
     <a routerLink="" class="brand-logo right">Rotas Ng</a>
     <ul id="nav-mobile" class="left hide-on-med-and-down">
       <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
       <li routerLinkActive="active"><a routerLink="/cursos" [queryParams]="{pagina:1}">Cursos</a></li>
-      <!-- <li routerLinkActive="active"><a [routerLink]="['curso', idCurso.value]">Curso com id</a></li> -->
+       <li routerLinkActive="active"><a [routerLink]="['curso', idCurso.value]">Curso com id</a></li>
       <li routerLinkActive="active"><a routerLink="/alunos">Alunos</a></li>
+      <li routerLinkActive="active"><a routerLink="/menu">Alunos</a></li>
+    </ul>
+  </div>
+</nav> -->
+
+<nav *ngIf="!mostrarMenu">
+  <div class="nav-wrapper">
+    <a routerLink="" class="brand-logo right">CURSO AG</a>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
     </ul>
   </div>
 </nav>
+
+<p-tabMenu *ngIf="mostrarMenu" [model]="itemsMenuSuperior" [activeItem]="itemsMenuSuperior[0]"></p-tabMenu>
+
+<p-slideMenu *ngIf="mostrarMenu" #menu [model]="itemsMenuLateral" [popup]="false" [viewportHeight]="250"></p-slideMenu>
+<!-- <button #btn type="button" pButton icon="pi pi-bars" (click)="menu.toggle($event)"></button> -->
 
 <div class="container">
   <!-- <p>Entre com id do curso</p><input #idCurso> -->

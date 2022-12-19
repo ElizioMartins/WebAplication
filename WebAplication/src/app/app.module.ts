@@ -10,14 +10,18 @@ import { HomeComponent } from './home/home.component';
 import { AuthService } from './login/auth.service';
 import { LoginComponent } from './login/login.component';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
-import { CampoControlErroComponent } from './erro-form-control/campo-control-erro/campo-control-erro.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './menu/menu.component';
 import { CardModule } from 'primeng/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
-import { SlideMenu, SlideMenuModule } from 'primeng/slidemenu';
+import { SlideMenuModule } from 'primeng/slidemenu';
 import { TabMenuModule } from 'primeng/tabmenu';
+import { UsuarioFormModule } from './usuario-form/usuario-form.module';
+import {InputTextModule} from 'primeng/inputtext';
+import {CheckboxModule} from 'primeng/checkbox';
+import {RadioButtonModule} from 'primeng/radiobutton';
+import {RippleModule} from 'primeng/ripple';
 
 @NgModule({
   declarations: [
@@ -38,6 +42,10 @@ import { TabMenuModule } from 'primeng/tabmenu';
     ButtonModule,
     SlideMenuModule,
     TabMenuModule,
+    InputTextModule,
+		CheckboxModule,
+		RadioButtonModule,
+    RippleModule
   ],
   providers: [AuthService, AuthGuard, CursosGuard],
   bootstrap: [AppComponent],

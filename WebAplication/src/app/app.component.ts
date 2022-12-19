@@ -62,6 +62,17 @@ export class AppComponent {
           { label: 'Refresh', icon: 'pi pi-fw pi-refresh' },
         ],
       },
+      {
+        label: 'Usuario',
+        icon: 'pi pi-fw pi-pencil',
+        routerLink : '/usuario',
+        items: [
+          { label: 'Adicionar', icon: 'pi pi-fw pi-trash' },
+          { label: 'Editar', icon: 'pi pi-fw pi-trash' },
+          { label: 'Delete', icon: 'pi pi-fw pi-trash' },
+          { label: 'Refresh', icon: 'pi pi-fw pi-refresh' },
+        ],
+      },
     ];
     this.itemsMenuSuperior = [
       { label: 'Home', icon: 'pi pi-fw pi-home' , routerLink : '' },

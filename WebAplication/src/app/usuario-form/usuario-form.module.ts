@@ -7,6 +7,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import { AppModule } from "../app.module";
 import { FormDebugComponent } from '../form-debug/form-debug.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
     imports: [
         CommonModule,
         FormsModule,
+        HttpClientModule,
         RouterModule,
         ReactiveFormsModule,
         ButtonModule,

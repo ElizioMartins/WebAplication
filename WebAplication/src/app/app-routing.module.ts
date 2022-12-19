@@ -5,7 +5,7 @@ import { CursosGuard } from './guards/cursos.guard';
 
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { MenuComponent } from './menu/menu/menu.component';
+import { MenuComponent } from './menu/menu.component';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 
 const routes: Routes = [
